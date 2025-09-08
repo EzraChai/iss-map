@@ -53,7 +53,11 @@
 								// Example: Esri World Imagery
 								'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
 							],
-							tileSize: 256
+							tileSize: 256,
+							attribution:
+								"© <a href='https://www.esri.com/'>Esri</a>, " +
+								"<a href='https://www.maxar.com/'>Maxar</a>, " +
+								'Earthstar Geographics, and the GIS User Community'
 						}
 					},
 					layers: [
@@ -69,7 +73,8 @@
 				zoom: 2, // starting zoom
 				maxZoom: 5,
 
-				minZoom: 1
+				minZoom: 1,
+				attributionControl: false
 			});
 
 			const customLayer = {
@@ -180,17 +185,16 @@
 	}
 </script>
 
-{#if isLoading}
-	<div class="">
-		<div
-			class="absolute inset-0 z-50 flex flex-col items-center justify-center gap-2 bg-black/20 text-white backdrop-blur-2xl"
-		>
-			<h1>Internation Space Station Tracker</h1>
-			<div class="text-xs text-zinc-300">Loading...</div>
-		</div>
-	</div>
-{/if}
-<div class=" bg-black" id="map">
+<div
+	class="absolute inset-0 z-50 flex flex-col items-center justify-center gap-2 bg-black/20 text-white backdrop-blur-2xl
+         transition-opacity duration-1000 ease-in-out"
+	class:opacity-100={isLoading}
+	class:opacity-0={!isLoading}
+>
+	<h1>International Space Station Tracker</h1>
+	<div class="text-xs text-zinc-300">Loading...</div>
+</div>
+<div class="bg-black" id="map">
 	{#if !isLoading}
 		<div class="absolute top-2 right-2 z-100 flex flex-col">
 			<button
@@ -200,6 +204,9 @@
 				<img class="h-4 w-4" src={issIcon} alt="Internation Space Station Icon" />
 				{!followISS ? 'Follow ISS' : 'Unfollow ISS'}</button
 			>
+		</div>
+		<div class="absolute right-2 bottom-2 z-100 text-neutral-500">
+			Map Libre | © Esri, Maxar, Earthstar Geographics, and the GIS User Community
 		</div>
 		<div class="absolute right-2 bottom-10 z-100">
 			<button
