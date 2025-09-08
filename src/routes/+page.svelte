@@ -216,10 +216,10 @@
 				{!followISS ? 'Follow ISS' : 'Unfollow ISS'}</button
 			>
 		</div>
-		<div class="absolute right-2 bottom-2 z-100 text-[6px] text-neutral-500 md:text-sm">
+		<div class="absolute right-2 bottom-1 z-100 text-[8px] text-neutral-500 md:text-sm">
 			Map Libre | © Esri, Maxar, Earthstar Geographics, and the GIS User Community
 		</div>
-		<div class="absolute right-2 bottom-10 z-100">
+		<div class="absolute right-2 bottom-7 z-100">
 			<button
 				onclick={() => map.flyTo({ center: [currentPosition.lng, currentPosition.lat], zoom: 4 })}
 				class="mt-2 inline-flex items-center gap-2 rounded-2xl border border-white bg-transparent px-2 py-1 text-white hover:cursor-pointer"
