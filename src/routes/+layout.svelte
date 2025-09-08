@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import issIcon from '$lib/assets/iss.png';
+	import issIcon from '$lib/assets/favicon.ico';
 
 	let { children } = $props();
 </script>
