@@ -4,10 +4,15 @@ body {
 	font-family: 'Funnel Display', sans-serif;
 	font-optical-sizing: auto;
 	background-color: black;
+	overscroll-behavior: none;
+	margin: 0;
+	padding: 0;
+	height: 100%; /* fallback */
+	overflow: hidden;
 }
 
 #map {
-	height: 100dvh;
+	height: calc(var(--vh, 1vh) * 100); /* adjust if there's a header */
 	width: 100vw;
 	font-family: 'Funnel Display', sans-serif;
 	font-optical-sizing: auto;

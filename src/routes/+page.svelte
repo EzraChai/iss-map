@@ -18,6 +18,17 @@
 	const tweenGroup = new Group();
 
 	$effect(() => {
+		function setFixedVH() {
+			const vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
+		}
+
+		// Run once
+		setFixedVH();
+
+		// Optional: re-run only if you want orientation changes to be handled
+		window.addEventListener('orientationchange', setFixedVH);
+
 		(async () => {
 			const res = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
 			const data = await res.json();
