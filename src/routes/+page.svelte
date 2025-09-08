@@ -205,7 +205,7 @@
 				{!followISS ? 'Follow ISS' : 'Unfollow ISS'}</button
 			>
 		</div>
-		<div class="absolute right-2 bottom-2 z-100 text-neutral-500">
+		<div class="absolute right-2 bottom-2 z-100 text-xs text-neutral-500 md:text-sm">
 			Map Libre | © Esri, Maxar, Earthstar Geographics, and the GIS User Community
 		</div>
 		<div class="absolute right-2 bottom-10 z-100">
