@@ -111,9 +111,8 @@
 
 					// use the MapLibre GL JS map canvas for three.js
 					this.renderer = new THREE.WebGLRenderer({
-						canvas: map.getCanvas(),
-						context: gl,
-						antialias: true
+						// canvas: map.getCanvsas(),
+						context: gl
 					});
 
 					this.renderer.autoClear = false;
@@ -190,11 +189,12 @@
          transition-opacity duration-1000 ease-in-out"
 	class:opacity-100={isLoading}
 	class:opacity-0={!isLoading}
+	class:pointer-events-none={!isLoading}
 >
 	<h1>International Space Station Tracker</h1>
 	<div class="text-xs text-zinc-300">Loading...</div>
 </div>
-<div class="bg-black" id="map">
+<div class="h-screen w-full bg-black" id="map">
 	{#if !isLoading}
 		<div class="absolute top-2 right-2 z-100 flex flex-col">
 			<button
